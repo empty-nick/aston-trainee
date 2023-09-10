@@ -5,6 +5,18 @@ const str3 = {} + '' // any type + string = string
 const str4 = JSON.stringify({prop: 'string'})
 const str5 = `dynamic ${str4}`
 const str6 = 155..toString()
+function Person(name, age){
+    this.name = name;
+    this.age = age;
+    this.toString = function () {
+        return `My name is ${this.name} and I'm ${this.age}`
+    };
+    this.valueOf = function () {
+        return this.age * 2
+    };
+}
+const str7 = new Person('John', 25)
+console.log(str7.toString()) // return primitive string value "My name is John and I'm 25"
 // 2 number
 const num1 = 1
 const num2 = Number('268')
@@ -14,6 +26,8 @@ const num5 = parseFloat('1159.848')
 const num6 = parseInt('1159.848')
 const num7 = ('str' | 2)
 const num8 = ('str' & 2)
+const num9 = new Person('Dori', 35)
+console.log(num9.valueOf()) //return primitive number value 70
 // 3 boolean
 const bool1 = true
 const bool2 = Boolean(0)
